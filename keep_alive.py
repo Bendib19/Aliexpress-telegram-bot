@@ -1,65 +1,35 @@
-# keep_alive.py
-
-
 
 from flask import Flask
-
 from threading import Thread
-
 import requests
-
 import time
-
-
+import os
 
 app = Flask(__name__)
 
-
-
-@app.route('/')
-
+@app.route("/")
 def home():
-
-    return "?"
-
-
+    return "Bot is alive!"
 
 def run():
-
-    app.run(host='0.0.0.0', port=8080)
-
-
+    # اقرأ المنفذ من متغير PORT المُعيّن أو استخدم 5000 كافتراضي
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
 def keep_alive():
-
-    t = Thread(target=run)
-
+    t = Thread(target=run, daemon=True)
     t.start()
 
-
-
 def self_ping():
-
+    url = os.environ.get("RENDER_URL")  # أو ضع هنا رابط خدمتك على Render
     while True:
-
         try:
-
-            requests.get("https://aliexpress-telegram-bot-ipxz.onrender.com")  
-
-            print(" hello world ")
-
-        except:
-
-            print("fail ping")
-
+            requests.get(url)
+            print("Self-ping succeeded")
+        except Exception:
+            print("Self-ping failed")
         time.sleep(60 * 3)
 
-		
-
-		
-
-		
-
-keep_alive()
-
-Thread(target=self_ping).start()		
+if __name__ == "__main__":
+    keep_alive()
+    Thread(target=self_ping, daemon=True).start()
