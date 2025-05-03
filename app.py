@@ -656,7 +656,7 @@ async def process_product_telegram(product_id: str, base_url: str, update: Updat
             [
                 InlineKeyboardButton("GitHub", url="https://github.com/ReizoZ"),
                 InlineKeyboardButton("Discord", url="https://discord.gg/9QzECYfmw8"),
-                InlineKeyboardButton("Telegram", url="https://t.me/Aliexpress_Deal_Dz")
+                InlineKeyboardButton("Telegram", url="https://t.me/zexpress_dz")
             ],
             [
                 InlineKeyboardButton("☕ Buy Me Coffee", url="https://ko-fi.com/reizoz")
