@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from keep_alive import keep_alive
+keep_alive()
+
 import logging
 import os
 import re
