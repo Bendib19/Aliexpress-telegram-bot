@@ -647,7 +647,7 @@ async def process_product_telegram(product_id: str, base_url: str, update: Updat
                 message_lines.append(f"{offer_name}: ❌ Failed")
 
         # Add footer text
-        message_lines.append("\n<i>By RizoZ</i>")
+        message_lines.append("\n<i>By Zaki</i>")
         response_text = "\n".join(message_lines)
 
         # --- Create Inline Keyboard ---
