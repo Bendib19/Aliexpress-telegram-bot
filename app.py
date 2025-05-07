@@ -76,10 +76,10 @@ SHORT_LINK_DOMAIN_REGEX = re.compile(r'https?://(?:s\.click\.aliexpress\.com/e/|
 
 # --- Offer Parameter Mapping ---
 OFFER_PARAMS = {
-    "coin": {"name": "🪙 Coin", "params": {"sourceType": "620", "channel": "coin" , "afSmartRedirect": "y"}},
-    "super": {"name": "🔥 Super Deals", "params": {"sourceType": "562", "channel": "sd" , "afSmartRedirect": "y"}},
-    "limited": {"name": "⏳ Limited Offers", "params": {"sourceType": "561", "channel": "limitedoffers" , "afSmartRedirect": "y"}},
-    "bigsave": {"name": "💰 Big Save", "params": {"sourceType": "680", "channel": "bigSave" , "afSmartRedirect": "y"}},
+    "coin": {"name": "🪙 Coin رابط الخصم بالنقاط", "params": {"sourceType": "620", "channel": "coin" , "afSmartRedirect": "y"}},
+    "super": {"name": "🔥 Super Deals رابط السوبر ديلز", "params": {"sourceType": "562", "channel": "sd" , "afSmartRedirect": "y"}},
+    "limited": {"name": "⏳ Limited Offers رابط العرض المحدود", "params": {"sourceType": "561", "channel": "limitedoffers" , "afSmartRedirect": "y"}},
+    "bigsave": {"name": "💰 Big Save رابط", "params": {"sourceType": "680", "channel": "bigSave" , "afSmartRedirect": "y"}},
 }
 OFFER_ORDER = ["coin", "super", "limited", "bigsave"]
 
@@ -528,10 +528,10 @@ async def generate_affiliate_links_batch(target_urls: list[str]) -> dict[str, st
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Sends a welcome message when the /start command is issued."""
     await update.message.reply_html(
-        "👋 Welcome to the AliExpress Discount Bot! 🛍️\n\n"
+        "👋 Welcome to the AliExpress zexpress Bot! 🛍️\n\n"
         "🔍 <b>How to use this bot:</b>\n"
-        "1️⃣ Copy a product link from AliExpress 📋\n"
-        "2️⃣ Send the link to this bot 📤\n"
+        "1️⃣ Copy a product link from AliExpress انسخ الرابط على علي اكسبرس 📋\n"
+        "2️⃣ Send the link to this bot ضع الرابط هنا على بوت zexpress 📤\n"
         "3️⃣ The bot will automatically generate affiliate links for you ✨\n"
         "4️⃣ Use the links to share and earn 💰\n\n"
         "🔗 <b>Supported link types:</b>\n"
@@ -657,13 +657,9 @@ async def process_product_telegram(product_id: str, base_url: str, update: Updat
                 InlineKeyboardButton("Best Deals", url="https://s.click.aliexpress.com/e/_onx9vR3")
             ],
             [
-                InlineKeyboardButton("GitHub", url="https://github.com/ReizoZ"),
-                InlineKeyboardButton("Discord", url="https://discord.gg/9QzECYfmw8"),
                 InlineKeyboardButton("Telegram", url="https://t.me/zexpress_dz")
             ],
-            [
-                InlineKeyboardButton("☕ Buy Me Coffee", url="https://ko-fi.com/reizoz")
-            ]
+            
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
 
