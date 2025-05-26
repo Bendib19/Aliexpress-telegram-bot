@@ -80,9 +80,8 @@ OFFER_PARAMS = {
     "super": {"name": "🔥 Super Deals رابط السوبر ديلز", "params": {"sourceType": "562", "channel": "sd" , "afSmartRedirect": "y"}},
     "limited": {"name": "⏳ Limited Offers رابط العرض المحدود", "params": {"sourceType": "561", "channel": "limitedoffers" , "afSmartRedirect": "y"}},
     "bigsave": {"name": "💰 Big Save رابط", "params": {"sourceType": "680", "channel": "bigSave" , "afSmartRedirect": "y"}},
-}
 "bundle": {"name": "📦 Bundle Deals رابط عرض الحزمة", "params": {"sourceType": "600", "channel": "bundleDeals" , "afSmartRedirect": "y"}},
-}},
+}
 OFFER_ORDER = ["coin", "super", "limited", "bigsave",  "bundle"]
 
 # --- Cache Implementation with Expiry ---
