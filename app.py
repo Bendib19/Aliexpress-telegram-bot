@@ -81,7 +81,9 @@ OFFER_PARAMS = {
     "limited": {"name": "⏳ Limited Offers رابط العرض المحدود", "params": {"sourceType": "561", "channel": "limitedoffers" , "afSmartRedirect": "y"}},
     "bigsave": {"name": "💰 Big Save رابط", "params": {"sourceType": "680", "channel": "bigSave" , "afSmartRedirect": "y"}},
 }
-OFFER_ORDER = ["coin", "super", "limited", "bigsave"]
+"bundle": {"name": "📦 Bundle Deals رابط عرض الحزمة", "params": {"sourceType": "600", "channel": "bundleDeals" , "afSmartRedirect": "y"}},
+}},
+OFFER_ORDER = ["coin", "super", "limited", "bigsave",  "bundle"]
 
 # --- Cache Implementation with Expiry ---
 class CacheWithExpiry:
